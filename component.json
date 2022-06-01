@@ -1,1 +1,855 @@
-{"triggers": {"GetAllFileCabinetsAndDocumentTrays": {"main": "./lib/triggers/trigger.js", "title": "Get all file cabinets and document trays", "description": "Get all file cabinets and document trays", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets?orgid={{OrgId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAllFileCabinetsAndDocumentTrays.in.json", "out": "./lib/schemas/GetAllFileCabinetsAndDocumentTrays.out.json"}}, "GetAllDataForAFileCabinet": {"main": "./lib/triggers/trigger.js", "title": "Get all data for a file cabinet (e.g fields)", "description": "Get all data for a file cabinet (e.g fields)", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAllDataForAFileCabinet.in.json", "out": "./lib/schemas/GetAllDataForAFileCabinet.out.json"}}, "GetAllDialogsOfTheFileCabinet": {"main": "./lib/triggers/trigger.js", "title": "Get all dialogs of the file cabinet", "description": "Get all dialogs of the file cabinet", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Dialogs", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAllDialogsOfTheFileCabinet.in.json", "out": "./lib/schemas/GetAllDialogsOfTheFileCabinet.out.json"}}, "GetAllRolesFromUser": {"main": "./lib/triggers/trigger.js", "title": "Get all Roles from User", "description": "Get all Roles from User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAllRolesFromUser.in.json", "out": "./lib/schemas/GetAllRolesFromUser.out.json"}}, "GetAllGroupsFromUser": {"main": "./lib/triggers/trigger.js", "title": "Get all Groups from User", "description": "Get all Groups from User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAllGroupsFromUser.in.json", "out": "./lib/schemas/GetAllGroupsFromUser.out.json"}}}, "actions": {"GetOrganization": {"main": "./lib/actions/action.js", "title": "Get organization", "description": "Get organization", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organizations", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetOrganization.in.json", "out": "./lib/schemas/GetOrganization.out.json"}}, "Check-outAParticularDocumentAndDownloadIt": {"main": "./lib/actions/action.js", "title": "Check-out a particular document and download it", "description": "Check-out a particular document and download it", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/CheckoutToFileSystem", "method": "POST"}, "metadata": {"in": "./lib/schemas/Check-outAParticularDocumentAndDownloadIt.in.json", "out": "./lib/schemas/Check-outAParticularDocumentAndDownloadIt.out.json"}}, "Check-inAParticularDocumentFromFileSystem": {"main": "./lib/actions/action.js", "title": "Check-in a particular document from file system", "description": "Check-in a particular document from file system", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/CheckInFromFileSystem", "method": "POST"}, "metadata": {"in": "./lib/schemas/Check-inAParticularDocumentFromFileSystem.in.json", "out": "./lib/schemas/Check-inAParticularDocumentFromFileSystem.out.json"}}, "UndoCheck-out": {"main": "./lib/actions/action.js", "title": "Undo Check-out", "description": "Undo Check-out", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Operations/ProcessDocumentAction?docId={{DocumentId}}", "method": "PUT"}, "metadata": {"in": "./lib/schemas/UndoCheck-out.in.json", "out": "./lib/schemas/UndoCheck-out.out.json"}}, "DownloadThumbnail": {"main": "./lib/actions/action.js", "title": "Download thumbnail", "description": "Download thumbnail", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Rendering/{{DocumentId}}-{{Section}}/Thumbnail?page={{Page}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/DownloadThumbnail.in.json", "out": "./lib/schemas/DownloadThumbnail.out.json"}}, "DownloadDocument": {"main": "./lib/actions/action.js", "title": "Download document", "description": "Download document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/FileDownload?targetFileType=Auto&keepAnnotations=false", "method": "GET"}, "metadata": {"in": "./lib/schemas/DownloadDocument.in.json", "out": "./lib/schemas/DownloadDocument.out.json"}}, "DownloadSection": {"main": "./lib/actions/action.js", "title": "Download section", "description": "Download section", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}/Data", "method": "GET"}, "metadata": {"in": "./lib/schemas/DownloadSection.in.json", "out": "./lib/schemas/DownloadSection.out.json"}}, "DownloadPartialSection": {"main": "./lib/actions/action.js", "title": "Download partial section", "description": "Download partial section", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}/Data", "method": "GET"}, "metadata": {"in": "./lib/schemas/DownloadPartialSection.in.json", "out": "./lib/schemas/DownloadPartialSection.out.json"}}, "GetDocumentsFromAFileCabinet": {"main": "./lib/actions/action.js", "title": "Get documents from a file cabinet", "description": "Get documents from a file cabinet", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetDocumentsFromAFileCabinet.in.json", "out": "./lib/schemas/GetDocumentsFromAFileCabinet.out.json"}}, "GetFirst5DocumentsFromAFileCabinet": {"main": "./lib/actions/action.js", "title": "Get first 5 documents from a file cabinet", "description": "Get first 5 documents from a file cabinet", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?count=5", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetFirst5DocumentsFromAFileCabinet.in.json", "out": "./lib/schemas/GetFirst5DocumentsFromAFileCabinet.out.json"}}, "GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly": {"main": "./lib/actions/action.js", "title": "Get first document from a file cabinet with two fields only", "description": "Get first document from a file cabinet with two fields only", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?count=1&fields=COMPANY,CONTACT", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly.in.json", "out": "./lib/schemas/GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly.out.json"}}, "GetAParticularDocument": {"main": "./lib/actions/action.js", "title": "Get a particular document", "description": "Get a particular document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAParticularDocument.in.json", "out": "./lib/schemas/GetAParticularDocument.out.json"}}, "TransferDocument": {"main": "./lib/actions/action.js", "title": "Transfer document", "description": "Transfer document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{DestinationFileCabinetId}}/Task/Transfer?storeDialogId=b8d7dccb-1dc3-44b1-b059-673f9d82d201", "method": "POST"}, "metadata": {"in": "./lib/schemas/TransferDocument.in.json", "out": "./lib/schemas/TransferDocument.out.json"}}, "DeleteDocument": {"main": "./lib/actions/action.js", "title": "Delete document", "description": "Delete document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}", "method": "DELETE"}, "metadata": {"in": "./lib/schemas/DeleteDocument.in.json", "out": "./lib/schemas/DeleteDocument.out.json"}}, "GetSectionsFromADocument": {"main": "./lib/actions/action.js", "title": "Get sections from a document", "description": "Get sections from a document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?docid={{DocumentId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetSectionsFromADocument.in.json", "out": "./lib/schemas/GetSectionsFromADocument.out.json"}}, "GetAParticularSection": {"main": "./lib/actions/action.js", "title": "Get a particular section", "description": "Get a particular section", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAParticularSection.in.json", "out": "./lib/schemas/GetAParticularSection.out.json"}}, "UploadASinglePdfToSection": {"main": "./lib/actions/action.js", "title": "Upload  a single pdf to section", "description": "Upload  a single pdf to section", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?DocId={{DocumentId}}", "method": "POST"}, "metadata": {"in": "./lib/schemas/UploadASinglePdfToSection.in.json", "out": "./lib/schemas/UploadASinglePdfToSection.out.json"}}, "DeleteSection": {"main": "./lib/actions/action.js", "title": "Delete section", "description": "Delete section", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}", "method": "DELETE"}, "metadata": {"in": "./lib/schemas/DeleteSection.in.json", "out": "./lib/schemas/DeleteSection.out.json"}}, "GetTheSearchDialog": {"main": "./lib/actions/action.js", "title": "Get the search dialog", "description": "Get the search dialog", "callParams": {"pathName": "", "method": ""}, "metadata": {"in": "./lib/schemas/GetTheSearchDialog.in.json", "out": "./lib/schemas/GetTheSearchDialog.out.json"}}, "GetTotalAmountOfDocuments": {"main": "./lib/actions/action.js", "title": "Get total amount of documents", "description": "Get total amount of documents", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/CountExpression?dialogId={{SearchDialogId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetTotalAmountOfDocuments.in.json", "out": "./lib/schemas/GetTotalAmountOfDocuments.out.json"}}, "GetSearchDialog": {"main": "./lib/actions/action.js", "title": "Get search dialog", "description": "Get search dialog", "callParams": {"pathName": "", "method": ""}, "metadata": {"in": "./lib/schemas/GetSearchDialog.in.json", "out": "./lib/schemas/GetSearchDialog.out.json"}}, "SearchInSingleFilecabinet": {"main": "./lib/actions/action.js", "title": "Search in single FileCabinet", "description": "Search in single FileCabinet", "callParams": {"pathName": "", "method": ""}, "metadata": {"in": "./lib/schemas/SearchInSingleFilecabinet.in.json", "out": "./lib/schemas/SearchInSingleFilecabinet.out.json"}}, "SearchForDocumentsInMultipleFilecabinets": {"main": "./lib/actions/action.js", "title": "Search for documents in multiple FileCabinets", "description": "Search for documents in multiple FileCabinets", "callParams": {"pathName": "", "method": ""}, "metadata": {"in": "./lib/schemas/SearchForDocumentsInMultipleFilecabinets.in.json", "out": "./lib/schemas/SearchForDocumentsInMultipleFilecabinets.out.json"}}, "GetAParticularDataRecordOrDocument": {"main": "./lib/actions/action.js", "title": "Get a particular data record or document", "description": "Get a particular data record or document", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetAParticularDataRecordOrDocument.in.json", "out": "./lib/schemas/GetAParticularDataRecordOrDocument.out.json"}}, "UpdateIndexValues": {"main": "./lib/actions/action.js", "title": "Update index values (XML)", "description": "Update index values (XML)", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Fields", "method": "PUT"}, "metadata": {"in": "./lib/schemas/UpdateIndexValues.in.json", "out": "./lib/schemas/UpdateIndexValues.out.json"}}, "UpdateIndexValuesTableFields": {"main": "./lib/actions/action.js", "title": "Update index values table fields (JSON)", "description": "Update index values table fields (JSON)", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Fields", "method": "PUT"}, "metadata": {"in": "./lib/schemas/UpdateIndexValuesTableFields.in.json", "out": "./lib/schemas/UpdateIndexValuesTableFields.out.json"}}, "CreateADataEntry": {"main": "./lib/actions/action.js", "title": "Create a data entry", "description": "Create a data entry", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents", "method": "POST"}, "metadata": {"in": "./lib/schemas/CreateADataEntry.in.json", "out": "./lib/schemas/CreateADataEntry.out.json"}}, "UploadASinglePdfFileForADataEntry": {"main": "./lib/actions/action.js", "title": "Upload  a single pdf file for a data entry", "description": "Upload  a single pdf file for a data entry", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?DocId={{DocumentId}}", "method": "POST"}, "metadata": {"in": "./lib/schemas/UploadASinglePdfFileForADataEntry.in.json", "out": "./lib/schemas/UploadASinglePdfFileForADataEntry.out.json"}}, "CreateADataRecordAndUploadFile": {"main": "./lib/actions/action.js", "title": "Create a data record and upload file", "description": "Create a data record and upload file", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents", "method": "POST"}, "metadata": {"in": "./lib/schemas/CreateADataRecordAndUploadFile.in.json", "out": "./lib/schemas/CreateADataRecordAndUploadFile.out.json"}}, "CreateDataRecordAndUploadFileWithStoreDialog": {"main": "./lib/actions/action.js", "title": "Create data record and upload file with store dialog", "description": "Create data record and upload file with store dialog", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?StoreDialogId={{StoreDialogId}}", "method": "POST"}, "metadata": {"in": "./lib/schemas/CreateDataRecordAndUploadFileWithStoreDialog.in.json", "out": "./lib/schemas/CreateDataRecordAndUploadFileWithStoreDialog.out.json"}}, "List": {"main": "./lib/actions/action.js", "title": "List", "description": "List", "callParams": {"pathName": "https://sdkinc.inhouse.docuware.cloud/DocuWare/Platform/WebClient/336/Integration?rl=38674e1a-bcb5-417b-a7ca-bfe522c50bf2&p=RLV&sed=76fdd27c-fed3-4c18-9a57-c5e17bf0786f", "method": "GET"}, "metadata": {"in": "./lib/schemas/List.in.json", "out": "./lib/schemas/List.out.json"}}, "ViewDocument": {"main": "./lib/actions/action.js", "title": "View document", "description": "View document", "callParams": {"pathName": "https://sdkinc.inhouse.docuware.cloud/DocuWare/Platform/WebClient/336/Integration?fc=e1390171-c231-4a8b-8f01-1ca78dee5dbf&did=1&p=V", "method": "GET"}, "metadata": {"in": "./lib/schemas/ViewDocument.in.json", "out": "./lib/schemas/ViewDocument.out.json"}}, "Addapplicationproperty": {"main": "./lib/actions/action.js", "title": "AddApplicationProperty", "description": "AddApplicationProperty", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addapplicationproperty.in.json", "out": "./lib/schemas/Addapplicationproperty.out.json"}}, "Deleteapplicationproperty": {"main": "./lib/actions/action.js", "title": "DeleteApplicationProperty", "description": "DeleteApplicationProperty", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties", "method": "POST"}, "metadata": {"in": "./lib/schemas/Deleteapplicationproperty.in.json", "out": "./lib/schemas/Deleteapplicationproperty.out.json"}}, "Updateapplicationproperty": {"main": "./lib/actions/action.js", "title": "UpdateApplicationProperty", "description": "UpdateApplicationProperty", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties", "method": "POST"}, "metadata": {"in": "./lib/schemas/Updateapplicationproperty.in.json", "out": "./lib/schemas/Updateapplicationproperty.out.json"}}, "Addstampwithposition": {"main": "./lib/actions/action.js", "title": "AddStampWithPosition", "description": "AddStampWithPosition", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addstampwithposition.in.json", "out": "./lib/schemas/Addstampwithposition.out.json"}}, "Addstampwithbestposition": {"main": "./lib/actions/action.js", "title": "AddStampWithBestPosition", "description": "AddStampWithBestPosition", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addstampwithbestposition.in.json", "out": "./lib/schemas/Addstampwithbestposition.out.json"}}, "Addtextannotation": {"main": "./lib/actions/action.js", "title": "AddTextAnnotation", "description": "AddTextAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addtextannotation.in.json", "out": "./lib/schemas/Addtextannotation.out.json"}}, "Addrectentryannotation": {"main": "./lib/actions/action.js", "title": "AddRectEntryAnnotation", "description": "AddRectEntryAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addrectentryannotation.in.json", "out": "./lib/schemas/Addrectentryannotation.out.json"}}, "Addlineentryannotation": {"main": "./lib/actions/action.js", "title": "AddLineEntryAnnotation", "description": "AddLineEntryAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addlineentryannotation.in.json", "out": "./lib/schemas/Addlineentryannotation.out.json"}}, "Addpolylineentryannotation": {"main": "./lib/actions/action.js", "title": "AddPolyLineEntryAnnotation", "description": "AddPolyLineEntryAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Addpolylineentryannotation.in.json", "out": "./lib/schemas/Addpolylineentryannotation.out.json"}}, "Deleteannotation": {"main": "./lib/actions/action.js", "title": "DeleteAnnotation", "description": "DeleteAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Deleteannotation.in.json", "out": "./lib/schemas/Deleteannotation.out.json"}}, "Updatetextannotation": {"main": "./lib/actions/action.js", "title": "UpdateTextAnnotation", "description": "UpdateTextAnnotation", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation", "method": "POST"}, "metadata": {"in": "./lib/schemas/Updatetextannotation.in.json", "out": "./lib/schemas/Updatetextannotation.out.json"}}, "Workflowdocumenthistory": {"main": "./lib/actions/action.js", "title": "WorkflowDocumentHistory", "description": "WorkflowDocumentHistory", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/WorkflowHistory", "method": "GET"}, "metadata": {"in": "./lib/schemas/Workflowdocumenthistory.in.json", "out": "./lib/schemas/Workflowdocumenthistory.out.json"}}, "Workflowdocumenthistorysteps": {"main": "./lib/actions/action.js", "title": "WorkflowDocumentHistorySteps", "description": "WorkflowDocumentHistorySteps", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Workflows/0c135ffb-1616-4607-9d9f-f3ea7789de12/Instances/be39345c-af7e-521e-81ca-12fc4b8c7d02/History", "method": "GET"}, "metadata": {"in": "./lib/schemas/Workflowdocumenthistorysteps.in.json", "out": "./lib/schemas/Workflowdocumenthistorysteps.out.json"}}, "Getselectlist": {"main": "./lib/actions/action.js", "title": "GetSelectList", "description": "GetSelectList", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/SelectListExpression?dialogId={{SearchDialogId}}&fieldName=DOCUMENTTYPE", "method": "POST"}, "metadata": {"in": "./lib/schemas/Getselectlist.in.json", "out": "./lib/schemas/Getselectlist.out.json"}}, "Getfilteredselectlist": {"main": "./lib/actions/action.js", "title": "GetFilteredSelectList", "description": "GetFilteredSelectList", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/SelectListExpression?dialogId={{SearchDialogId}}&fieldName=COMPANY", "method": "POST"}, "metadata": {"in": "./lib/schemas/Getfilteredselectlist.in.json", "out": "./lib/schemas/Getfilteredselectlist.out.json"}}, "Clip": {"main": "./lib/actions/action.js", "title": "Clip", "description": "Clip", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentMerge", "method": "POST"}, "metadata": {"in": "./lib/schemas/Clip.in.json", "out": "./lib/schemas/Clip.out.json"}}, "Unclip": {"main": "./lib/actions/action.js", "title": "Unclip", "description": "Unclip", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentDivide?docId={{DocumentId}}", "method": "POST"}, "metadata": {"in": "./lib/schemas/Unclip.in.json", "out": "./lib/schemas/Unclip.out.json"}}, "Staple": {"main": "./lib/actions/action.js", "title": "Staple", "description": "Staple", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentMerge", "method": "POST"}, "metadata": {"in": "./lib/schemas/Staple.in.json", "out": "./lib/schemas/Staple.out.json"}}, "Unstaple": {"main": "./lib/actions/action.js", "title": "Unstaple", "description": "Unstaple", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentDivide?docId={{DocumentId}}", "method": "POST"}, "metadata": {"in": "./lib/schemas/Unstaple.in.json", "out": "./lib/schemas/Unstaple.out.json"}}, "GetUsers": {"main": "./lib/actions/action.js", "title": "Get Users", "description": "Get Users", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/Users", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetUsers.in.json", "out": "./lib/schemas/GetUsers.out.json"}}, "GetUser": {"main": "./lib/actions/action.js", "title": "Get User", "description": "Get User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserByID?userId={{UserId}}", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetUser.in.json", "out": "./lib/schemas/GetUser.out.json"}}, "CreateUser": {"main": "./lib/actions/action.js", "title": "Create User", "description": "Create User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserInfo", "method": "POST"}, "metadata": {"in": "./lib/schemas/CreateUser.in.json", "out": "./lib/schemas/CreateUser.out.json"}}, "UpdateUser": {"main": "./lib/actions/action.js", "title": "Update User", "description": "Update User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserInfo", "method": "POST"}, "metadata": {"in": "./lib/schemas/UpdateUser.in.json", "out": "./lib/schemas/UpdateUser.out.json"}}, "GetRoles": {"main": "./lib/actions/action.js", "title": "Get Roles", "description": "Get Roles", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/Roles", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetRoles.in.json", "out": "./lib/schemas/GetRoles.out.json"}}, "AddRoleToUser": {"main": "./lib/actions/action.js", "title": "Add Role to User", "description": "Add Role to User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}", "method": "PUT"}, "metadata": {"in": "./lib/schemas/AddRoleToUser.in.json", "out": "./lib/schemas/AddRoleToUser.out.json"}}, "RemoveRoleFromUser": {"main": "./lib/actions/action.js", "title": "Remove Role from User", "description": "Remove Role from User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}", "method": "PUT"}, "metadata": {"in": "./lib/schemas/RemoveRoleFromUser.in.json", "out": "./lib/schemas/RemoveRoleFromUser.out.json"}}, "GetGroups": {"main": "./lib/actions/action.js", "title": "Get Groups", "description": "Get Groups", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/Groups", "method": "GET"}, "metadata": {"in": "./lib/schemas/GetGroups.in.json", "out": "./lib/schemas/GetGroups.out.json"}}, "AddGroupToUser": {"main": "./lib/actions/action.js", "title": "Add Group to User", "description": "Add Group to User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}", "method": "PUT"}, "metadata": {"in": "./lib/schemas/AddGroupToUser.in.json", "out": "./lib/schemas/AddGroupToUser.out.json"}}, "RemoveGroupFromUser": {"main": "./lib/actions/action.js", "title": "Remove Group from User", "description": "Remove Group from User", "callParams": {"pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}", "method": "PUT"}, "metadata": {"in": "./lib/schemas/RemoveGroupFromUser.in.json", "out": "./lib/schemas/RemoveGroupFromUser.out.json"}}}}
+{
+  "title": "Docuware API",
+  "description": "This is a docuware interface for OIH",
+  "docsUrl": "",
+  "triggers": {
+    "GetAllFileCabinetsAndDocumentTrays": {
+      "main": "./lib/triggers/trigger.js",
+      "title": "Get all file cabinets and document trays",
+      "description": "Get all file cabinets and document trays",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets?orgid={{OrgId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAllFileCabinetsAndDocumentTrays.in.json",
+        "out": "./lib/schemas/GetAllFileCabinetsAndDocumentTrays.out.json"
+      }
+    },
+    "GetAllDataForAFileCabinet": {
+      "main": "./lib/triggers/trigger.js",
+      "title": "Get all data for a file cabinet (e.g fields)",
+      "description": "Get all data for a file cabinet (e.g fields)",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAllDataForAFileCabinet.in.json",
+        "out": "./lib/schemas/GetAllDataForAFileCabinet.out.json"
+      }
+    },
+    "GetAllDialogsOfTheFileCabinet": {
+      "main": "./lib/triggers/trigger.js",
+      "title": "Get all dialogs of the file cabinet",
+      "description": "Get all dialogs of the file cabinet",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Dialogs",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAllDialogsOfTheFileCabinet.in.json",
+        "out": "./lib/schemas/GetAllDialogsOfTheFileCabinet.out.json"
+      }
+    },
+    "GetAllRolesFromUser": {
+      "main": "./lib/triggers/trigger.js",
+      "title": "Get all Roles from User",
+      "description": "Get all Roles from User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAllRolesFromUser.in.json",
+        "out": "./lib/schemas/GetAllRolesFromUser.out.json"
+      }
+    },
+    "GetAllGroupsFromUser": {
+      "main": "./lib/triggers/trigger.js",
+      "title": "Get all Groups from User",
+      "description": "Get all Groups from User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAllGroupsFromUser.in.json",
+        "out": "./lib/schemas/GetAllGroupsFromUser.out.json"
+      }
+    }
+  },
+  "actions": {
+    "GetOrganization": {
+      "main": "./lib/actions/action.js",
+      "title": "Get organization",
+      "description": "Get organization",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organizations",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetOrganization.in.json",
+        "out": "./lib/schemas/GetOrganization.out.json"
+      }
+    },
+    "Check-outAParticularDocumentAndDownloadIt": {
+      "main": "./lib/actions/action.js",
+      "title": "Check-out a particular document and download it",
+      "description": "Check-out a particular document and download it",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/CheckoutToFileSystem",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Check-outAParticularDocumentAndDownloadIt.in.json",
+        "out": "./lib/schemas/Check-outAParticularDocumentAndDownloadIt.out.json"
+      }
+    },
+    "Check-inAParticularDocumentFromFileSystem": {
+      "main": "./lib/actions/action.js",
+      "title": "Check-in a particular document from file system",
+      "description": "Check-in a particular document from file system",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/CheckInFromFileSystem",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Check-inAParticularDocumentFromFileSystem.in.json",
+        "out": "./lib/schemas/Check-inAParticularDocumentFromFileSystem.out.json"
+      }
+    },
+    "UndoCheck-out": {
+      "main": "./lib/actions/action.js",
+      "title": "Undo Check-out",
+      "description": "Undo Check-out",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Operations/ProcessDocumentAction?docId={{DocumentId}}",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UndoCheck-out.in.json",
+        "out": "./lib/schemas/UndoCheck-out.out.json"
+      }
+    },
+    "DownloadThumbnail": {
+      "main": "./lib/actions/action.js",
+      "title": "Download thumbnail",
+      "description": "Download thumbnail",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Rendering/{{DocumentId}}-{{Section}}/Thumbnail?page={{Page}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DownloadThumbnail.in.json",
+        "out": "./lib/schemas/DownloadThumbnail.out.json"
+      }
+    },
+    "DownloadDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Download document",
+      "description": "Download document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/FileDownload?targetFileType=Auto&keepAnnotations=false",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DownloadDocument.in.json",
+        "out": "./lib/schemas/DownloadDocument.out.json"
+      }
+    },
+    "DownloadSection": {
+      "main": "./lib/actions/action.js",
+      "title": "Download section",
+      "description": "Download section",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}/Data",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DownloadSection.in.json",
+        "out": "./lib/schemas/DownloadSection.out.json"
+      }
+    },
+    "DownloadPartialSection": {
+      "main": "./lib/actions/action.js",
+      "title": "Download partial section",
+      "description": "Download partial section",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}/Data",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DownloadPartialSection.in.json",
+        "out": "./lib/schemas/DownloadPartialSection.out.json"
+      }
+    },
+    "GetDocumentsFromAFileCabinet": {
+      "main": "./lib/actions/action.js",
+      "title": "Get documents from a file cabinet",
+      "description": "Get documents from a file cabinet",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetDocumentsFromAFileCabinet.in.json",
+        "out": "./lib/schemas/GetDocumentsFromAFileCabinet.out.json"
+      }
+    },
+    "GetFirst5DocumentsFromAFileCabinet": {
+      "main": "./lib/actions/action.js",
+      "title": "Get first 5 documents from a file cabinet",
+      "description": "Get first 5 documents from a file cabinet",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?count=5",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetFirst5DocumentsFromAFileCabinet.in.json",
+        "out": "./lib/schemas/GetFirst5DocumentsFromAFileCabinet.out.json"
+      }
+    },
+    "GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly": {
+      "main": "./lib/actions/action.js",
+      "title": "Get first document from a file cabinet with two fields only",
+      "description": "Get first document from a file cabinet with two fields only",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?count=1&fields=COMPANY,CONTACT",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly.in.json",
+        "out": "./lib/schemas/GetFirstDocumentFromAFileCabinetWithTwoFieldsOnly.out.json"
+      }
+    },
+    "GetAParticularDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Get a particular document",
+      "description": "Get a particular document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAParticularDocument.in.json",
+        "out": "./lib/schemas/GetAParticularDocument.out.json"
+      }
+    },
+    "TransferDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Transfer document",
+      "description": "Transfer document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{DestinationFileCabinetId}}/Task/Transfer?storeDialogId=b8d7dccb-1dc3-44b1-b059-673f9d82d201",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/TransferDocument.in.json",
+        "out": "./lib/schemas/TransferDocument.out.json"
+      }
+    },
+    "DeleteDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Delete document",
+      "description": "Delete document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}",
+        "method": "DELETE"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DeleteDocument.in.json",
+        "out": "./lib/schemas/DeleteDocument.out.json"
+      }
+    },
+    "GetSectionsFromADocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Get sections from a document",
+      "description": "Get sections from a document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?docid={{DocumentId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetSectionsFromADocument.in.json",
+        "out": "./lib/schemas/GetSectionsFromADocument.out.json"
+      }
+    },
+    "GetAParticularSection": {
+      "main": "./lib/actions/action.js",
+      "title": "Get a particular section",
+      "description": "Get a particular section",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAParticularSection.in.json",
+        "out": "./lib/schemas/GetAParticularSection.out.json"
+      }
+    },
+    "UploadASinglePdfToSection": {
+      "main": "./lib/actions/action.js",
+      "title": "Upload  a single pdf to section",
+      "description": "Upload  a single pdf to section",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?DocId={{DocumentId}}",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UploadASinglePdfToSection.in.json",
+        "out": "./lib/schemas/UploadASinglePdfToSection.out.json"
+      }
+    },
+    "DeleteSection": {
+      "main": "./lib/actions/action.js",
+      "title": "Delete section",
+      "description": "Delete section",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections/{{Section}}",
+        "method": "DELETE"
+      },
+      "metadata": {
+        "in": "./lib/schemas/DeleteSection.in.json",
+        "out": "./lib/schemas/DeleteSection.out.json"
+      }
+    },
+    "GetTheSearchDialog": {
+      "main": "./lib/actions/action.js",
+      "title": "Get the search dialog",
+      "description": "Get the search dialog",
+      "callParams": { "pathName": "", "method": "" },
+      "metadata": {
+        "in": "./lib/schemas/GetTheSearchDialog.in.json",
+        "out": "./lib/schemas/GetTheSearchDialog.out.json"
+      }
+    },
+    "GetTotalAmountOfDocuments": {
+      "main": "./lib/actions/action.js",
+      "title": "Get total amount of documents",
+      "description": "Get total amount of documents",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/CountExpression?dialogId={{SearchDialogId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetTotalAmountOfDocuments.in.json",
+        "out": "./lib/schemas/GetTotalAmountOfDocuments.out.json"
+      }
+    },
+    "GetSearchDialog": {
+      "main": "./lib/actions/action.js",
+      "title": "Get search dialog",
+      "description": "Get search dialog",
+      "callParams": { "pathName": "", "method": "" },
+      "metadata": {
+        "in": "./lib/schemas/GetSearchDialog.in.json",
+        "out": "./lib/schemas/GetSearchDialog.out.json"
+      }
+    },
+    "SearchInSingleFilecabinet": {
+      "main": "./lib/actions/action.js",
+      "title": "Search in single FileCabinet",
+      "description": "Search in single FileCabinet",
+      "callParams": { "pathName": "", "method": "" },
+      "metadata": {
+        "in": "./lib/schemas/SearchInSingleFilecabinet.in.json",
+        "out": "./lib/schemas/SearchInSingleFilecabinet.out.json"
+      }
+    },
+    "SearchForDocumentsInMultipleFilecabinets": {
+      "main": "./lib/actions/action.js",
+      "title": "Search for documents in multiple FileCabinets",
+      "description": "Search for documents in multiple FileCabinets",
+      "callParams": { "pathName": "", "method": "" },
+      "metadata": {
+        "in": "./lib/schemas/SearchForDocumentsInMultipleFilecabinets.in.json",
+        "out": "./lib/schemas/SearchForDocumentsInMultipleFilecabinets.out.json"
+      }
+    },
+    "GetAParticularDataRecordOrDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "Get a particular data record or document",
+      "description": "Get a particular data record or document",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetAParticularDataRecordOrDocument.in.json",
+        "out": "./lib/schemas/GetAParticularDataRecordOrDocument.out.json"
+      }
+    },
+    "UpdateIndexValues": {
+      "main": "./lib/actions/action.js",
+      "title": "Update index values (XML)",
+      "description": "Update index values (XML)",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Fields",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UpdateIndexValues.in.json",
+        "out": "./lib/schemas/UpdateIndexValues.out.json"
+      }
+    },
+    "UpdateIndexValuesTableFields": {
+      "main": "./lib/actions/action.js",
+      "title": "Update index values table fields (JSON)",
+      "description": "Update index values table fields (JSON)",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Fields",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UpdateIndexValuesTableFields.in.json",
+        "out": "./lib/schemas/UpdateIndexValuesTableFields.out.json"
+      }
+    },
+    "CreateADataEntry": {
+      "main": "./lib/actions/action.js",
+      "title": "Create a data entry",
+      "description": "Create a data entry",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/CreateADataEntry.in.json",
+        "out": "./lib/schemas/CreateADataEntry.out.json"
+      }
+    },
+    "UploadASinglePdfFileForADataEntry": {
+      "main": "./lib/actions/action.js",
+      "title": "Upload  a single pdf file for a data entry",
+      "description": "Upload  a single pdf file for a data entry",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Sections?DocId={{DocumentId}}",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UploadASinglePdfFileForADataEntry.in.json",
+        "out": "./lib/schemas/UploadASinglePdfFileForADataEntry.out.json"
+      }
+    },
+    "CreateADataRecordAndUploadFile": {
+      "main": "./lib/actions/action.js",
+      "title": "Create a data record and upload file",
+      "description": "Create a data record and upload file",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/CreateADataRecordAndUploadFile.in.json",
+        "out": "./lib/schemas/CreateADataRecordAndUploadFile.out.json"
+      }
+    },
+    "CreateDataRecordAndUploadFileWithStoreDialog": {
+      "main": "./lib/actions/action.js",
+      "title": "Create data record and upload file with store dialog",
+      "description": "Create data record and upload file with store dialog",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents?StoreDialogId={{StoreDialogId}}",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/CreateDataRecordAndUploadFileWithStoreDialog.in.json",
+        "out": "./lib/schemas/CreateDataRecordAndUploadFileWithStoreDialog.out.json"
+      }
+    },
+    "List": {
+      "main": "./lib/actions/action.js",
+      "title": "List",
+      "description": "List",
+      "callParams": {
+        "pathName": "https://sdkinc.inhouse.docuware.cloud/DocuWare/Platform/WebClient/336/Integration?rl=38674e1a-bcb5-417b-a7ca-bfe522c50bf2&p=RLV&sed=76fdd27c-fed3-4c18-9a57-c5e17bf0786f",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/List.in.json",
+        "out": "./lib/schemas/List.out.json"
+      }
+    },
+    "ViewDocument": {
+      "main": "./lib/actions/action.js",
+      "title": "View document",
+      "description": "View document",
+      "callParams": {
+        "pathName": "https://sdkinc.inhouse.docuware.cloud/DocuWare/Platform/WebClient/336/Integration?fc=e1390171-c231-4a8b-8f01-1ca78dee5dbf&did=1&p=V",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/ViewDocument.in.json",
+        "out": "./lib/schemas/ViewDocument.out.json"
+      }
+    },
+    "Addapplicationproperty": {
+      "main": "./lib/actions/action.js",
+      "title": "AddApplicationProperty",
+      "description": "AddApplicationProperty",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addapplicationproperty.in.json",
+        "out": "./lib/schemas/Addapplicationproperty.out.json"
+      }
+    },
+    "Deleteapplicationproperty": {
+      "main": "./lib/actions/action.js",
+      "title": "DeleteApplicationProperty",
+      "description": "DeleteApplicationProperty",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Deleteapplicationproperty.in.json",
+        "out": "./lib/schemas/Deleteapplicationproperty.out.json"
+      }
+    },
+    "Updateapplicationproperty": {
+      "main": "./lib/actions/action.js",
+      "title": "UpdateApplicationProperty",
+      "description": "UpdateApplicationProperty",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/DocumentApplicationProperties",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Updateapplicationproperty.in.json",
+        "out": "./lib/schemas/Updateapplicationproperty.out.json"
+      }
+    },
+    "Addstampwithposition": {
+      "main": "./lib/actions/action.js",
+      "title": "AddStampWithPosition",
+      "description": "AddStampWithPosition",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addstampwithposition.in.json",
+        "out": "./lib/schemas/Addstampwithposition.out.json"
+      }
+    },
+    "Addstampwithbestposition": {
+      "main": "./lib/actions/action.js",
+      "title": "AddStampWithBestPosition",
+      "description": "AddStampWithBestPosition",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addstampwithbestposition.in.json",
+        "out": "./lib/schemas/Addstampwithbestposition.out.json"
+      }
+    },
+    "Addtextannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "AddTextAnnotation",
+      "description": "AddTextAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addtextannotation.in.json",
+        "out": "./lib/schemas/Addtextannotation.out.json"
+      }
+    },
+    "Addrectentryannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "AddRectEntryAnnotation",
+      "description": "AddRectEntryAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addrectentryannotation.in.json",
+        "out": "./lib/schemas/Addrectentryannotation.out.json"
+      }
+    },
+    "Addlineentryannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "AddLineEntryAnnotation",
+      "description": "AddLineEntryAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addlineentryannotation.in.json",
+        "out": "./lib/schemas/Addlineentryannotation.out.json"
+      }
+    },
+    "Addpolylineentryannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "AddPolyLineEntryAnnotation",
+      "description": "AddPolyLineEntryAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Addpolylineentryannotation.in.json",
+        "out": "./lib/schemas/Addpolylineentryannotation.out.json"
+      }
+    },
+    "Deleteannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "DeleteAnnotation",
+      "description": "DeleteAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Deleteannotation.in.json",
+        "out": "./lib/schemas/Deleteannotation.out.json"
+      }
+    },
+    "Updatetextannotation": {
+      "main": "./lib/actions/action.js",
+      "title": "UpdateTextAnnotation",
+      "description": "UpdateTextAnnotation",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/Annotation",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Updatetextannotation.in.json",
+        "out": "./lib/schemas/Updatetextannotation.out.json"
+      }
+    },
+    "Workflowdocumenthistory": {
+      "main": "./lib/actions/action.js",
+      "title": "WorkflowDocumentHistory",
+      "description": "WorkflowDocumentHistory",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Documents/{{DocumentId}}/WorkflowHistory",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Workflowdocumenthistory.in.json",
+        "out": "./lib/schemas/Workflowdocumenthistory.out.json"
+      }
+    },
+    "Workflowdocumenthistorysteps": {
+      "main": "./lib/actions/action.js",
+      "title": "WorkflowDocumentHistorySteps",
+      "description": "WorkflowDocumentHistorySteps",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Workflows/0c135ffb-1616-4607-9d9f-f3ea7789de12/Instances/be39345c-af7e-521e-81ca-12fc4b8c7d02/History",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Workflowdocumenthistorysteps.in.json",
+        "out": "./lib/schemas/Workflowdocumenthistorysteps.out.json"
+      }
+    },
+    "Getselectlist": {
+      "main": "./lib/actions/action.js",
+      "title": "GetSelectList",
+      "description": "GetSelectList",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/SelectListExpression?dialogId={{SearchDialogId}}&fieldName=DOCUMENTTYPE",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Getselectlist.in.json",
+        "out": "./lib/schemas/Getselectlist.out.json"
+      }
+    },
+    "Getfilteredselectlist": {
+      "main": "./lib/actions/action.js",
+      "title": "GetFilteredSelectList",
+      "description": "GetFilteredSelectList",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{FileCabinetId}}/Query/SelectListExpression?dialogId={{SearchDialogId}}&fieldName=COMPANY",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Getfilteredselectlist.in.json",
+        "out": "./lib/schemas/Getfilteredselectlist.out.json"
+      }
+    },
+    "Clip": {
+      "main": "./lib/actions/action.js",
+      "title": "Clip",
+      "description": "Clip",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentMerge",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Clip.in.json",
+        "out": "./lib/schemas/Clip.out.json"
+      }
+    },
+    "Unclip": {
+      "main": "./lib/actions/action.js",
+      "title": "Unclip",
+      "description": "Unclip",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentDivide?docId={{DocumentId}}",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Unclip.in.json",
+        "out": "./lib/schemas/Unclip.out.json"
+      }
+    },
+    "Staple": {
+      "main": "./lib/actions/action.js",
+      "title": "Staple",
+      "description": "Staple",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentMerge",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Staple.in.json",
+        "out": "./lib/schemas/Staple.out.json"
+      }
+    },
+    "Unstaple": {
+      "main": "./lib/actions/action.js",
+      "title": "Unstaple",
+      "description": "Unstaple",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/FileCabinets/{{BasketId}}/Operations/ContentDivide?docId={{DocumentId}}",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/Unstaple.in.json",
+        "out": "./lib/schemas/Unstaple.out.json"
+      }
+    },
+    "GetUsers": {
+      "main": "./lib/actions/action.js",
+      "title": "Get Users",
+      "description": "Get Users",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/Users",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetUsers.in.json",
+        "out": "./lib/schemas/GetUsers.out.json"
+      }
+    },
+    "GetUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Get User",
+      "description": "Get User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserByID?userId={{UserId}}",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetUser.in.json",
+        "out": "./lib/schemas/GetUser.out.json"
+      }
+    },
+    "CreateUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Create User",
+      "description": "Create User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserInfo",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/CreateUser.in.json",
+        "out": "./lib/schemas/CreateUser.out.json"
+      }
+    },
+    "UpdateUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Update User",
+      "description": "Update User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserInfo",
+        "method": "POST"
+      },
+      "metadata": {
+        "in": "./lib/schemas/UpdateUser.in.json",
+        "out": "./lib/schemas/UpdateUser.out.json"
+      }
+    },
+    "GetRoles": {
+      "main": "./lib/actions/action.js",
+      "title": "Get Roles",
+      "description": "Get Roles",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/Roles",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetRoles.in.json",
+        "out": "./lib/schemas/GetRoles.out.json"
+      }
+    },
+    "AddRoleToUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Add Role to User",
+      "description": "Add Role to User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/AddRoleToUser.in.json",
+        "out": "./lib/schemas/AddRoleToUser.out.json"
+      }
+    },
+    "RemoveRoleFromUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Remove Role from User",
+      "description": "Remove Role from User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserRoles?UserId={{UserId}}",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/RemoveRoleFromUser.in.json",
+        "out": "./lib/schemas/RemoveRoleFromUser.out.json"
+      }
+    },
+    "GetGroups": {
+      "main": "./lib/actions/action.js",
+      "title": "Get Groups",
+      "description": "Get Groups",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/Groups",
+        "method": "GET"
+      },
+      "metadata": {
+        "in": "./lib/schemas/GetGroups.in.json",
+        "out": "./lib/schemas/GetGroups.out.json"
+      }
+    },
+    "AddGroupToUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Add Group to User",
+      "description": "Add Group to User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/AddGroupToUser.in.json",
+        "out": "./lib/schemas/AddGroupToUser.out.json"
+      }
+    },
+    "RemoveGroupFromUser": {
+      "main": "./lib/actions/action.js",
+      "title": "Remove Group from User",
+      "description": "Remove Group from User",
+      "callParams": {
+        "pathName": "{{ServerUrl}}/{{Platform}}/Organization/UserGroups?UserId={{UserId}}",
+        "method": "PUT"
+      },
+      "metadata": {
+        "in": "./lib/schemas/RemoveGroupFromUser.in.json",
+        "out": "./lib/schemas/RemoveGroupFromUser.out.json"
+      }
+    }
+  }
+}
